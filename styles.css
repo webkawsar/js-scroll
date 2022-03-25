@@ -151,14 +151,16 @@ body {
  **********************************************************************************************************/
 .container {
   display: flex;
-  width: 90vw;
-  margin: 0 auto;
   padding: 1rem 0;
   align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .logo-area {
-  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
   overflow: hidden;
 }
 
@@ -171,20 +173,20 @@ body {
 }
 
 .menu-area {
-  width: 70vw;
+  width: 70%;
 }
 
-.menu ul {
+.menu-area ul {
   display: flex;
   justify-content: flex-end;
 }
 
-.menu ul li a {
+.menu-area ul li a {
   display: block;
   padding: 0 1.75rem;
   text-transform: capitalize;
   font-weight: 800;
-  color: var(--clr-white);
+  color: var(--clr-primary-2);
   letter-spacing: var(--spacing);
 }
 
@@ -234,17 +236,11 @@ header {
   }
   .logo-area {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    position: absolute;
+    background-color: var(--clr-white);
+    position: fixed;
     left: 0;
     top: 0;
-    padding: 1rem;
-  }
-  .menu-area {
-    width: 100%;
-    display: none;
+    padding: 0.75rem 0;
   }
   .logo-area .nav-toggle {
     display: block;
@@ -252,6 +248,30 @@ header {
     border: none;
     cursor: pointer;
     background-color: transparent;
+  }
+
+  .menu-area {
+    background-color: var(--clr-white);
+    position: fixed;
+    left: 0;
+    top: 79px;
+    width: 100%;
+    text-indent: 10px;
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+  .menu-area ul {
+    flex-direction: column;
+  }
+
+  .menu-area ul li:not(last-child) {
+    border-bottom: 1px solid var(--clr-primary-2);
+  }
+  .menu-area ul li a {
+    color: var(--clr-primary-1);
+    padding: 1.25rem 0;
   }
 }
 
@@ -270,4 +290,12 @@ header {
 footer {
   text-align: center;
   padding: 5rem 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--clr-white);
+  color: var(--clr-primary-2);
 }
